@@ -1,33 +1,94 @@
+# Help / generated docs
 HELP.md
+
+# Maven / Java build output
 target/
-.mvn/wrapper/maven-wrapper.jar
+**/target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### STS ###
+# Maven wrapper jar
+.mvn/wrapper/maven-wrapper.jar
+**/.mvn/wrapper/maven-wrapper.jar
+
+# Gradle build output if added later
+build/
+**/build/
+.gradle/
+**/.gradle/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Java compiled files
+*.class
+*.jar
+*.war
+*.ear
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+*.jks
+
+# Logs
+logs/
+**/logs/
+*.log
+
+# Docker local override files
+docker-compose.override.yml
+docker-compose.local.yml
+
+# Kubernetes secret files
+*kubeconfig*
+*.kubeconfig
+k8s/secrets/
+**/secret-local.yml
+**/secret-local.yaml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# STS / Eclipse
 .apt_generated
 .classpath
 .factorypath
 .project
-.settings
+.settings/
 .springBeans
-.sts4-cache
+.sts4-cache/
 
-### IntelliJ IDEA ###
-.idea
+# IntelliJ IDEA
+.idea/
 *.iws
 *.iml
 *.ipr
+out/
 
-### NetBeans ###
+# NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
+# VS Code
 .vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.envrc
+
+# Test / coverage output
+coverage/
+htmlcov/
+*.exec
