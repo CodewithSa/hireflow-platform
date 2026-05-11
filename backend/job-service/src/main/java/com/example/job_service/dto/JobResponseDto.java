@@ -5,9 +5,15 @@ import com.example.job_service.enums.JobStatus;
 import com.example.job_service.enums.WorkMode;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class JobResponseDto {
 
     private Long id;
@@ -19,6 +25,8 @@ public class JobResponseDto {
     private String description;
     private String requiredSkills;
     private String salaryRange;
-    private JobStatus status;
+    private JobStatus jobStatus;
     private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
 }

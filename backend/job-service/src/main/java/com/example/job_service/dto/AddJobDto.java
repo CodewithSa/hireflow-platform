@@ -7,46 +7,50 @@ import jakarta.persistence.Column;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class AddJobDto {
 
     @NotBlank(message = "Title is required")
     @Size(min = 3, max = 100)
     private String title;
 
-    @NotBlank(message = "Title is required")
-    @Size(min = 3, max = 100)
+    @NotBlank(message = "Company is required")
+    @Size(min = 2, max = 100)
     private String company;
 
-    @NotBlank(message = "Title is required")
-    @Size(min = 3, max = 100)
+    @NotBlank(message = "Location is required")
+    @Size(min = 2, max = 100)
     private String location;
 
-    @NotBlank(message = "Title is required")
-    @Size(min = 3, max = 100)
+    @NotBlank(message = "Description is required")
+    @Size(min = 20, max = 2000)
     private String description;
 
-    @NotBlank(message = "Title is required")
-    @Size(min = 3, max = 100)
+    @NotNull(message = "Employment type is required")
     private EmploymentType employmentType;
 
-    @NotBlank(message = "Title is required")
-    @Size(min = 3, max = 100)
+    @NotNull(message = "Work mode is required")
     private WorkMode workMode;
 
-    @NotBlank(message = "Title is required")
-    @Size(min = 3, max = 100)
     private JobStatus jobStatus;
 
-    @NotBlank(message = "Title is required")
-    @Size(min = 3, max = 100)
+    @NotBlank(message = "Required skills are required")
+    @Size(min = 2, max = 1000)
     private String requiredSkills;
 
-    @NotBlank(message = "Title is required")
-    @Size(min = 3, max = 100)
     private String salaryRange;
 
+
 }
+

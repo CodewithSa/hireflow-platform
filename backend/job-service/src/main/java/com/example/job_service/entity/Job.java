@@ -55,4 +55,22 @@ public class Job {
 
     @Column(nullable = false)
     private String salaryRange;
+
+    private LocalDateTime updatedAt;
+
+    @PrePersist
+    public void onCreate() {
+        this.createdAt = LocalDateTime.now();
+
+        if (this.jobStatus == null) {
+            this.jobStatus = JobStatus.OPEN;
+        }
+    }
+
+    @PreUpdate
+    public void onUpdate() {
+        this.updatedAt = LocalDateTime.now();
+    }
+
+
 }
